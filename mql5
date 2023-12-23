@@ -1,0 +1,79 @@
+
+// Martingale System by Profectus AI
+// Developer's Site: forexroboteasy.com
+// Developed by: Forex Robot Easy Team
+
+// Include necessary libraries
+
+#include <iostream>
+#include <vector>
+
+// Define the Martingale trading bot class
+
+class MartingaleBot {
+private:
+    double accountBalance;
+    double riskLimit;
+    double stopLoss;
+    double takeProfit;
+    double entryPrice;
+    double tradeSize;
+    std::vector<double> trades;
+
+public:
+    // Constructor
+    MartingaleBot(double balance, double risk, double sl, double tp) {
+        accountBalance = balance;
+        riskLimit = risk;
+        stopLoss = sl;
+        takeProfit = tp;
+        entryPrice = 0.0;
+        tradeSize = calculateTradeSize();
+    }
+
+    // Function to calculate trade size based on account balance and risk limit
+    double calculateTradeSize() {
+        // Implement your logic here
+        // Example: tradeSize = accountBalance * riskLimit;
+        return tradeSize;
+    }
+
+    // Function to generate trading signals and execute trades
+    void trade() {
+        // Implement your logic here
+        // Example: if (generateSignal()) executeTrade();
+    }
+
+    // Function to generate trading signals
+    bool generateSignal() {
+        // Implement your logic here
+        // Example: return (entryPrice >= stopLoss && entryPrice <= takeProfit);
+    }
+
+    // Function to execute trades
+    void executeTrade() {
+        // Implement your logic here
+        // Example: trades.push_back(entryPrice);
+    }
+
+    // Function to calculate and display trading results
+    void calculateResults() {
+        // Implement your logic here
+        // Example: double profit = (trades.back() - entryPrice) * tradeSize;
+        //          std::cout << 'Profit: ' << profit << std::endl;
+    }
+};
+
+// Main function
+int main() {
+    // Create an instance of the MartingaleBot class
+    MartingaleBot bot(10000.0, 0.02, 1.0, 2.0);
+
+    // Call the trade function to generate trading signals and execute trades
+    bot.trade();
+
+    // Calculate and display the trading results
+    bot.calculateResults();
+
+    return 0;
+}
